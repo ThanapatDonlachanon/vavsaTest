@@ -69,11 +69,8 @@
         <div class="row">
            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-left">
               <div class="onebleft">
-                 <button onclick="vid.play()" class="btn btnskips">vidya</button>
-                 <button onclick="vid2.play()" class="btn btnskips">vidva</button>
-                 <button onclick="vid3.play()" class="btn btnskips">singum</button>
-                 <button onclick="vid4.play()" class="btn btnskips">aksorn</button>
-                 <button onclick="vid5.play()" class="btn btnskips">thapat</button>
+                 <button onclick="play()" class="btn btnskips">vidya</button>
+
               </div>
               <div class="onebleft">
                 <button onclick="vid.pause();vid2.pause();vid3.pause();vid4.pause();vid5.pause();" class="btn btnskips">Pause</button>
@@ -88,7 +85,7 @@
      </div>
 
 
-
+    
      
     <script>
         
@@ -99,13 +96,11 @@
             videoElement.setAttribute('visible', 'true'); // Show the video
             videoElement.play(); // Start playing the video
         });
-
         // Listen for AR.js markerLost event
         marker.addEventListener('markerLost', function () {
             videoElement.pause(); // Pause the video when the marker is lost
             videoElement.setAttribute('visible', 'false'); // Hide the video
         });
-
 
         const marker2 = document.getElementById('marker2');
         const videoElement2 = document.getElementById('vid2');
@@ -114,12 +109,12 @@
             videoElement2.setAttribute('visible', 'true'); // Show the video
             videoElement2.play(); // Start playing the video
         });
-
         // Listen for AR.js markerLost event
         marker2.addEventListener('markerLost', function () {
             videoElement2.pause(); // Pause the video when the marker is lost
             videoElement2.setAttribute('visible', 'false'); // Hide the video
         });
+
         const marker3 = document.getElementById('marker3');
         const videoElement3 = document.getElementById('vid3');
         // Listen for AR.js markerFound event
@@ -127,12 +122,12 @@
             videoElement3.setAttribute('visible', 'true'); // Show the video
             videoElement3.play(); // Start playing the video
         });
-
         // Listen for AR.js markerLost event
         marker3.addEventListener('markerLost', function () {
             videoElement3.pause(); // Pause the video when the marker is lost
             videoElement3.setAttribute('visible', 'false'); // Hide the video
         });
+
         const marker4 = document.getElementById('marker4');
         const videoElement4 = document.getElementById('vid4');
         // Listen for AR.js markerFound event
@@ -140,12 +135,12 @@
             videoElement4.setAttribute('visible', 'true'); // Show the video
             videoElement4.play(); // Start playing the video
         });
-
         // Listen for AR.js markerLost event
         marker4.addEventListener('markerLost', function () {
             videoElement4.pause(); // Pause the video when the marker is lost
             videoElement4.setAttribute('visible', 'false'); // Hide the video
         });
+
         const marker5 = document.getElementById('marker5');
         const videoElement5 = document.getElementById('vid5');
         // Listen for AR.js markerFound event
@@ -153,12 +148,20 @@
             videoElement5.setAttribute('visible', 'true'); // Show the video
             videoElement5.play(); // Start playing the video
         });
-
         // Listen for AR.js markerLost event
         marker5.addEventListener('markerLost', function () {
             videoElement5.pause(); // Pause the video when the marker is lost
             videoElement5.setAttribute('visible', 'false'); // Hide the video
         });
+
+
+        function play(){
+            if(videoElement.getAttribute('visible')){ videoElement.play()}
+            if(videoElement2.getAttribute('visible')){ videoElement2.play()}
+            if(videoElement3.getAttribute('visible')){ videoElement3.play()}
+            if(videoElement4.getAttribute('visible')){ videoElement4.play()}
+            if(videoElement5.getAttribute('visible')){ videoElement5.play()}
+        }
     </script>
 
 </body>
